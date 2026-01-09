@@ -1,0 +1,89 @@
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;500;700;900&family=Rajdhani:wght@300;500;700&display=swap');
+
+:root {
+    /* Color Palette - Apocalyptic / AI */
+    --color-bg-dark: #050505;
+    --color-bg-panel: #0a0f14;
+    --color-bg-overlay: rgba(10, 15, 20, 0.85);
+
+    --color-primary: #00f3ff; /* Neon Cyan - AI Core */
+    --color-primary-dim: rgba(0, 243, 255, 0.15);
+    --color-secondary: #ff3c00; /* Rust / Hazard Orange */
+    --color-secondary-dim: rgba(255, 60, 0, 0.15);
+    
+    --color-text-main: #e0e0e0;
+    --color-text-muted: #8a9bbb;
+    --color-text-highlight: #ffffff;
+
+    --color-border: #1a2329;
+    --color-border-active: #00f3ff;
+
+    /* Fonts */
+    --font-display: 'Orbitron', sans-serif;
+    --font-body: 'Rajdhani', sans-serif;
+
+    /* Effects */
+    --glow-primary: 0 0 10px rgba(0, 243, 255, 0.5), 0 0 20px rgba(0, 243, 255, 0.3);
+    --glow-secondary: 0 0 10px rgba(255, 60, 0, 0.5);
+    --crt-scanline: linear-gradient(to bottom, rgba(255,255,255,0), rgba(255,255,255,0) 50%, rgba(0,0,0,0.2) 50%, rgba(0,0,0,0.2));
+}
+
+body {
+    background-color: var(--color-bg-dark);
+    font-family: var(--font-body);
+    color: var(--color-text-main);
+    overflow: hidden;
+}
+
+/* Background Effects */
+.scanlines {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100vw;
+    height: 100vh;
+    background: var(--crt-scanline);
+    background-size: 100% 4px;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0.15;
+    animation: scanlineScroll 10s linear infinite;
+}
+
+@keyframes scanlineScroll {
+    0% { background-position: 0 0; }
+    100% { background-position: 0 100%; }
+}
+
+/* Utilities */
+.text-neon {
+    color: var(--color-primary);
+    text-shadow: 0 0 5px var(--color-primary);
+}
+
+.text-hazard {
+    color: var(--color-secondary);
+    text-shadow: 0 0 5px var(--color-secondary);
+}
+
+.font-display {
+    font-family: var(--font-display);
+}
+
+/* Scrollbar */
+::-webkit-scrollbar {
+    width: 6px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--color-bg-dark);
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--color-primary-dim);
+    border: 1px solid var(--color-primary);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: var(--color-primary);
+}
