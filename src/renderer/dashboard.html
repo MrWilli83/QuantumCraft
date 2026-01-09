@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumCraft - Dashboard</title>
+    <link rel="stylesheet" href="styles/dashboard.css">
+</head>
+<body>
+    <!-- Barre de titre personnalisée -->
+    <div class="titlebar">
+        <div class="titlebar-title">QuantumCraft</div>
+        <div class="titlebar-controls">
+            <button class="titlebar-button minimize" id="minimizeBtn">━</button>
+            <button class="titlebar-button maximize" id="maximizeBtn">□</button>
+            <button class="titlebar-button close" id="closeBtn">✕</button>
+        </div>
+    </div>
+
+    <!-- Container principal -->
+    <div class="dashboard-container">
+        <!-- Barre latérale -->
+        <div class="sidebar">
+            <div class="sidebar-logo">
+                <div class="tiny-cube"></div>
+                <span>Quantum</span>
+            </div>
+            
+            <nav class="sidebar-nav">
+                <a href="#" class="nav-item active" data-page="home">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M10 2L2 8v10h6v-6h4v6h6V8l-8-6z"/>
+                    </svg>
+                    <span>Accueil</span>
+                </a>
+                <a href="#" class="nav-item" data-page="settings">
+                    <svg width="20" height="20" viewBox="0 0 20 20" fill="currentColor">
+                        <path d="M17.43 10.98c.04-.32.07-.64.07-.98 0-.34-.03-.66-.07-.98l2.11-1.65c.19-.15.24-.42.12-.64l-2-3.46c-.12-.22-.39-.3-.61-.22l-2.49 1c-.52-.4-1.08-.73-1.69-.98l-.38-2.65C12.46 2.18 12.25 2 12 2h-4c-.25 0-.46.18-.49.42l-.38 2.65c-.61.25-1.17.59-1.69.98l-2.49-1c-.23-.09-.49 0-.61.22l-2 3.46c-.13.22-.07.49.12.64l2.11 1.65c-.04.32-.07.65-.07.98 0 .33.03.66.07.98l-2.11 1.65c-.19.15-.24.42-.12.64l2 3.46c.12.22.39.3.61.22l2.49-1c.52.4 1.08.73 1.69.98l.38 2.65c.03.24.24.42.49.42h4c.25 0 .46-.18.49-.42l.38-2.65c.61-.25 1.17-.59 1.69-.98l2.49 1c.23.09.49 0 .61-.22l2-3.46c.12-.22.07-.49-.12-.64l-2.11-1.65zM10 13c-1.65 0-3-1.35-3-3s1.35-3 3-3 3 1.35 3 3-1.35 3-3 3z"/>
+                    </svg>
+                    <span>Paramètres</span>
+                </a>
+            </nav>
+
+            <div class="sidebar-footer">
+                <button class="logout-btn" id="logoutBtn">
+                    <svg width="16" height="16" viewBox="0 0 16 16" fill="currentColor">
+                        <path d="M6 14H3a1 1 0 01-1-1V3a1 1 0 011-1h3m5 4l3 3m0 0l-3 3m3-3H6"/>
+                    </svg>
+                    Déconnexion
+                </button>
+            </div>
+        </div>
+
+        <!-- Contenu principal -->
+        <div class="main-content">
+            <!-- Page d'accueil -->
+            <div class="page active" id="homePage">
+                <!-- Header avec profil -->
+                <div class="profile-header">
+                    <div class="profile-info">
+                        <img src="" alt="Skin Minecraft" class="profile-avatar" id="profileAvatar">
+                        <div class="profile-details">
+                            <h2 id="profileName">Chargement...</h2>
+                            <p class="profile-status">Prêt à jouer</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Banner principal -->
+                <div class="game-banner">
+                    <div class="banner-overlay">
+                        <div class="banner-content">
+                            <h1>Minecraft Java Edition</h1>
+                            <p class="version-badge">Version 1.21</p>
+                            <p class="banner-description">Explorez, construisez et survivez dans un monde infini</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Section de lancement -->
+                <div class="launch-section">
+                    <button class="play-button" id="playButton">
+                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
+                            <path d="M8 5v14l11-7z"/>
+                        </svg>
+                        <span>Jouer</span>
+                    </button>
+
+                    <div class="game-info">
+                        <div class="info-item">
+                            <span class="info-label">RAM Allouée</span>
+                            <span class="info-value" id="ramDisplay">4 Go</span>
+                        </div>
+                        <div class="info-item">
+                            <span class="info-label">Statut</span>
+                            <span class="info-value" id="statusDisplay">Prêt</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Console de logs -->
+                <div class="logs-section">
+                    <div class="logs-header">
+                        <h3>Console de lancement</h3>
+                        <button class="clear-logs-btn" id="clearLogsBtn">Effacer</button>
+                    </div>
+                    <div class="logs-content" id="logsContent">
+                        <p class="log-line">En attente de lancement...</p>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Page de paramètres -->
+            <div class="page" id="settingsPage">
+                <div class="settings-container">
+                    <h1>Paramètres</h1>
+
+                    <div class="settings-section">
+                        <h2>Performance</h2>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>RAM Allouée</label>
+                                <p class="setting-description">Quantité de mémoire dédiée à Minecraft</p>
+                            </div>
+                            <div class="ram-selector">
+                                <button class="ram-option" data-ram="4096">4 Go</button>
+                                <button class="ram-option" data-ram="6144">6 Go</button>
+                                <button class="ram-option" data-ram="8192">8 Go</button>
+                                <button class="ram-option" data-ram="10240">10 Go</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="settings-section">
+                        <h2>Informations</h2>
+                        
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Dossier de jeu</label>
+                                <p class="setting-description" id="gameFolderPath">Chargement...</p>
+                            </div>
+                        </div>
+
+                        <div class="setting-item">
+                            <div class="setting-info">
+                                <label>Version du launcher</label>
+                                <p class="setting-description">1.0.0</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <button class="save-settings-btn" id="saveSettingsBtn">Sauvegarder les paramètres</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/dashboard.js"></script>
+</body>
+</html>

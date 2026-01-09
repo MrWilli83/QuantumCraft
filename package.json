@@ -1,0 +1,41 @@
+{
+  "name": "quantumcraft-launcher",
+  "version": "1.0.0",
+  "description": "QuantumCraft - Launcher Minecraft moderne avec authentification Microsoft",
+  "main": "src/main.js",
+  "scripts": {
+    "start": "electron .",
+    "dev": "electron . --dev",
+    "build": "electron-builder"
+  },
+  "keywords": [
+    "minecraft",
+    "launcher",
+    "electron",
+    "quantumcraft"
+  ],
+  "author": "QuantumCraft Team",
+  "license": "MIT",
+  "dependencies": {
+    "axios": "^1.13.2",
+    "minecraft-launcher-core": "^3.17.3",
+    "msmc": "^4.1.0",
+    "semver": "^7.5.4",
+    "toml": "^3.0.0"
+  },
+  "devDependencies": {
+    "electron": "^28.0.0",
+    "electron-builder": "^24.9.1"
+  },
+  "build": {
+    "appId": "com.quantumcraft.launcher",
+    "productName": "QuantumCraft",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    }
+  }
+}

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QuantumCraft - Connexion</title>
+    <link rel="stylesheet" href="styles/auth.css">
+</head>
+<body>
+    <!-- Barre de titre personnalisée -->
+    <div class="titlebar">
+        <div class="titlebar-title">QuantumCraft</div>
+        <div class="titlebar-controls">
+            <button class="titlebar-button minimize" id="minimizeBtn">━</button>
+            <button class="titlebar-button maximize" id="maximizeBtn">□</button>
+            <button class="titlebar-button close" id="closeBtn">✕</button>
+        </div>
+    </div>
+
+    <!-- Contenu principal -->
+    <div class="auth-container">
+        <div class="auth-box">
+            <div class="logo-section">
+                <div class="mini-cube">
+                    <div class="cube-face front"></div>
+                    <div class="cube-face back"></div>
+                    <div class="cube-face left"></div>
+                    <div class="cube-face right"></div>
+                    <div class="cube-face top"></div>
+                    <div class="cube-face bottom"></div>
+                </div>
+                <h1>QuantumCraft</h1>
+                <p class="tagline">Nouvelle dimension du jeu</p>
+            </div>
+
+            <div class="auth-content">
+                <h2>Connexion à Microsoft</h2>
+                <p class="auth-description">
+                    Connectez-vous avec votre compte Microsoft pour accéder à Minecraft.
+                </p>
+
+                <button class="microsoft-btn" id="loginBtn">
+                    <svg width="21" height="21" viewBox="0 0 21 21" xmlns="http://www.w3.org/2000/svg">
+                        <rect x="1" y="1" width="9" height="9" fill="#f25022"/>
+                        <rect x="1" y="11" width="9" height="9" fill="#00a4ef"/>
+                        <rect x="11" y="1" width="9" height="9" fill="#7fba00"/>
+                        <rect x="11" y="11" width="9" height="9" fill="#ffb900"/>
+                    </svg>
+                    <span>Se connecter avec Microsoft</span>
+                </button>
+
+                <div class="loading-section" id="loadingSection" style="display: none;">
+                    <div class="spinner"></div>
+                    <p id="loadingText">Connexion en cours...</p>
+                </div>
+
+                <div class="error-section" id="errorSection" style="display: none;">
+                    <p class="error-message" id="errorMessage"></p>
+                    <button class="retry-btn" id="retryBtn">Réessayer</button>
+                </div>
+            </div>
+
+            <div class="auth-footer">
+                <p>Version 1.0.0 • © 2026 QuantumCraft</p>
+            </div>
+        </div>
+    </div>
+
+    <script src="scripts/auth.js"></script>
+</body>
+</html>
